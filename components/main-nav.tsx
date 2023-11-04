@@ -14,7 +14,7 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
     active: pathName === `/category/${route.id}`,
   }));
   return (
-    <nav>
+    <nav className="flex gap-3 ml-auto">
       {routes.map((route) => (
         <Link
           href={route.href}
