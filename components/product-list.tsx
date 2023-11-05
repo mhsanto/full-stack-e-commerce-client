@@ -1,5 +1,6 @@
 import { Product } from "@/types";
 import NoProductsFound from "./ui/no-products";
+import ProductCard from "./ui/product-card";
 
 type ProductListProps = {
   title: string;
@@ -12,7 +13,7 @@ const ProductList: React.FC<ProductListProps> = ({ title, products }) => {
       {products.length === 0 && <NoProductsFound />}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
         {products.map((product) => (
-          <div key={product.id}>{product.name}</div>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
