@@ -1,3 +1,4 @@
+import { Product } from "@/types";
 import queryString from "query-string";
 
 const URL = `${process.env.NEXT_PUBLIC_STORE_URL_PUBLIC}/products`;
@@ -7,7 +8,7 @@ type Query = {
   sizeId?: string;
   isFeatured?: boolean;
 };
-const getProducts = async (query: Query) => {
+const getProducts = async (query: Query): Promise<Product[]> => {
   const url = queryString.stringifyUrl({
     url: URL,
     query: {

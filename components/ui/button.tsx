@@ -10,6 +10,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         "w-auto rounded-full bg-black border-transparent px-4 py-2 disabled:cursor-not-allowed text-white disabled:opacity-50 hover:opacity-80 font-semibold,transition",
         className
       )}
+      {...props}
     >
       {children}
     </button>
