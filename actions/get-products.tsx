@@ -1,6 +1,6 @@
 import queryString from "query-string";
 
-const URL = `${process.env.NEXT_PUBLIC_STORE_URL_Public}/products`;
+const URL = `${process.env.NEXT_PUBLIC_STORE_URL_PUBLIC}/products`;
 type Query = {
   categoryId?: string;
   colorId?: string;
@@ -17,7 +17,7 @@ const getProducts = async (query: Query) => {
       isFeatured: query.isFeatured,
     },
   });
-  const res = await fetch(URL);
-  return await res.json();
+  const res = await fetch(url);
+  return res.json();
 };
 export default getProducts;

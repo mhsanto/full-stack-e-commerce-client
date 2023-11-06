@@ -4,13 +4,19 @@ import Image from "next/image";
 import IconButton from "./icon-button";
 import { Expand, ShoppingCart } from "lucide-react";
 import Currency from "../currency";
+import { useRouter } from "next/navigation";
 
 type ProductCardProps = {
   product: Product;
 };
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const router = useRouter();
+
   return (
-    <div className="bg-white group cursor-pointer rounded-xl border p-4 space-y-4">
+    <div
+      className="bg-white group cursor-pointer rounded-xl border p-4 space-y-4"
+      onClick={() => router.push(`/product/${product.id}`)}
+    >
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
           src={product?.images?.[0]?.url}
@@ -27,14 +33,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       </div>
       {/* description */}
       <div>
-        
-      <p className="font-semibold text-lg">{product.name}</p>
-      <p className="text-sm text-gray-500">
-        {product.category?.name}
-      </p>
-      <div className="flex items-center justify-between">
-        <Currency value={product.price} />
-      </div>
+        <p className="font-semibold text-lg">{product.name}</p>
+        <p className="text-sm text-gray-500">{product.category?.name}</p>
+        <div className="flex items-center justify-between">
+          <Currency value={product.price} />
+        </div>
       </div>
     </div>
   );

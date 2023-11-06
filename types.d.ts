@@ -29,3 +29,8 @@ type Size = {
   name: string;
   value: string;
 };
+type Color = {
+  id: string;
+  name: string;
+  value: string;
+};
