@@ -17,7 +17,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
           ))}
         </Tab.List>
       </div>
-      <Tab.Panels className="aspect-square sm:w-[20rem] md:w-[28rem] sm:mx-auto lg:w-full">
+      <Tab.Panels className="aspect-square w-full  max-w-full sm:mx-auto md:w-[20rem] lg:w-[28rem]">
         {images.map((image) => (
           <Tab.Panel key={image.id}>
             <div className="aspect-square relative w-full h-full sm:rounded-lg overflow-hidden">
@@ -25,7 +25,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
                 src={image.url}
                 fill
                 alt="Product image"
-                className="object-cover object-center"
+                className="object-cover object-center max-w-full max-h-auto"
               />
             </div>
           </Tab.Panel>

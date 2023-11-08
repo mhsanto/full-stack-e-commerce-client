@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import ModalProvider from "@/providers/modal-provider";
 const unbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={unbanist.className}>
+        <ModalProvider />
         <Navbar />
         {children}
       </body>
