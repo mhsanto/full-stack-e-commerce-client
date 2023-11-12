@@ -5,8 +5,13 @@ const CategoryPage = () => {
   const router = useRouter();
 
   return (
-    <div className="flex w-screen h-screen" onClick={() => router.push("/")}>
-      Go Home
+    <div className="flex w-screen h-screen">
+      <button
+        onClick={() => router.push("/")}
+        className="py-2 px-4 bg-black text-white "
+      >
+        Go Home
+      </button>
     </div>
   );
 };
